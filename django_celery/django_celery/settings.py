@@ -37,11 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_celery_results',
+    'django_celery_beat',
     'main'
 ]
-
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,3 +128,7 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Karachi'
 
 CELERY_RESULT_BACKEND = 'django-db'
+
+# Celery Beat
+
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
